@@ -12,22 +12,21 @@ return computerPlayerSelection = "rock"
 } else if (computerChoiceLogic > 0.33 && computerChoiceLogic <= 0.66) {
   return computerPlayerSelection = "paper"  
 } else if (computerChoiceLogic > 0.66) {
-  return computerPlayerSelection = "Scissors"  
+  return computerPlayerSelection = "scissors"  
 } else { computerPlayerSelection = "Something went wrong try again"    
 } {    
 } {    
 }  
 }
 function getHumanChoice() {
-humanChoice = prompt("choose rock, paper, or Scissors!")    
+humanChoice = prompt("choose rock, paper, or scissors!")    
     return humanChoice
 }
 
 function playRound(humanChoice,computerChoice) {
 humanChoice = getHumanChoice()  
 computerChoice = getComputerChoice()
-humanChoice.toLowerCase()
-computerChoice.toLowerCase()
+humanChoice = humanChoice.toLowerCase()
 console.log(humanChoice)
 console.log(computerChoice) 
 if (humanChoice === "rock" && computerChoice === "rock") {
