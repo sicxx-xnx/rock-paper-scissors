@@ -49,9 +49,10 @@ if (humanChoice === "rock" && computerChoice === "rock") {
 }
 
 
-function test() {
-    getComputerChoice()
-    getHumanChoice()
-    console.log(computerPlayerSelection)
-    console.log(humanChoice)
+function playgame() {
+ playRound()
+ playRound()
+ playRound()
+ playRound()
+ playRound()  
 }
