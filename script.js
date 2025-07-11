@@ -30,14 +30,38 @@ humanChoice = humanChoice.toLowerCase()
 console.log(humanChoice)
 console.log(computerChoice) 
 if (humanChoice === "rock" && computerChoice === "rock") {
-    return console.log("its a tie!")    
+    console.log("its a tie!")
+    console.log("player score: " + humanScore)
+    console.log("compputer score: " + computerScore)    
 } else if (humanChoice === "rock" && computerChoice === "paper") {
-    return console.log("You Lose!")
+     console.log("You Lose!")
+       console.log("player score: " + humanScore)
+    console.log("compputer score: " + ++computerScore)  
 } else if (humanChoice === "rock" && computerChoice === "scissors") {
-    return console.log('You win!')
+     console.log('You win!')
+       console.log("player score: " + ++humanScore)
+    console.log("compputer score: " + computerScore)  
 } else if (humanChoice === "paper" && computerChoice === "paper" ) {
-    return console.log("its a tie") 
+     console.log("its a tie") 
+       console.log("player score: " + humanScore)
+    console.log("compputer score: " + computerScore)  
+} else if (humanChoice === "paper" && computerChoice === "rock") {
+     console.log("you win!")
+       console.log("player score: " + ++humanScore)
+    console.log("compputer score: " + computerScore)  
+} else if (humanChoice === "paper" && computerChoice === "scissors") {
+    console.log("you lose!")
+      console.log("player score: " + humanScore)
+    console.log("compputer score: " + ++computerScore)  
+} else if (condition) {
+    
 } else {
+    
+} {
+    
+} {
+    
+}{
     
 } {
     
