@@ -27,8 +27,8 @@ function playRound(humanChoice,computerChoice) {
 humanChoice = getHumanChoice()  
 computerChoice = getComputerChoice()
 humanChoice = humanChoice.toLowerCase()
-console.log(humanChoice)
-console.log(computerChoice) 
+console.log("player chose : " + humanChoice)
+console.log("computer chose : " + computerChoice) 
 if (humanChoice === "rock" && computerChoice === "rock") {
     console.log("its a tie!")
     console.log("player score: " + humanScore)
