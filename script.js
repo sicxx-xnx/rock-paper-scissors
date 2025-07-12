@@ -104,3 +104,10 @@ function playgame() {
     
  }
 }
+function startGame() {
+playgame()
+humanScore = 0
+computerScore = 0    
+}
+
+startGame()
