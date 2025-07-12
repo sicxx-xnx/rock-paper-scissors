@@ -93,4 +93,14 @@ function playgame() {
  playRound()
  playRound()
  playRound()  
+
+ if (humanScore > computerScore) {
+    alert("you won the game!")
+ } else if (humanScore < computerScore) {
+    alert("you lose this one, Try again")
+ } else {
+    alert("its a tie")
+ } {
+    
+ }
 }
