@@ -46,16 +46,30 @@ if (humanChoice === "rock" && computerChoice === "rock") {
        console.log("player score: " + humanScore)
     console.log("compputer score: " + computerScore)  
 } else if (humanChoice === "paper" && computerChoice === "rock") {
-     console.log("you win!")
-       console.log("player score: " + ++humanScore)
+    console.log("you win!")
+    console.log("player score: " + ++humanScore)
     console.log("compputer score: " + computerScore)  
 } else if (humanChoice === "paper" && computerChoice === "scissors") {
     console.log("you lose!")
-      console.log("player score: " + humanScore)
+    console.log("player score: " + humanScore)
     console.log("compputer score: " + ++computerScore)  
-} else if (condition) {
-    
+} else if (humanChoice === "scissors" && computerChoice === "scissors") {
+    console.log("its a tie") 
+    console.log("player score: " + humanScore)
+    console.log("compputer score: " + computerScore)   
+} else if (humanChoice === "scissors" && computerChoice === "paper") {
+    console.log("you win!")
+    console.log("player score: " + ++humanScore)
+    console.log("compputer score: " + computerScore) 
+} else if (humanChoice === "scissors" && computerChoice === "rock") {
+    console.log("You lose!")
+    console.log("player score: " + humanScore)
+    console.log("compputer score: " + ++computerScore) 
 } else {
+    
+} {
+    
+} {
     
 } {
     
