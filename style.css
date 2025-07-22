@@ -1,9 +1,67 @@
 *{
 box-sizing: border-box;    
 }
-
+h1 {
+text-align: center;   
+font-size: 25px; 
+}
+img {
+width: 250px;
+height: 250px;    
+}
 .play-field {
 border-bottom: thin solid black;
 display: flex;
-justify-content: space-between;    
+justify-content: space-between;   
+box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2); 
+}
+.player-chose-rock {
+display: none;  
+}
+.player-chose-paper {
+display: none;    
+}
+.player-chose-scissors {
+display: none;    
+}
+.pc-chose-rock {
+display: none;    
+}
+.pc-chose-paper {
+display: none;    
+}
+.pc-chose-scissors {
+display: none;    
+}
+.bottom-portion,
+.makeASelection {
+display: flex;
+height: 500px;    
+}
+.bottom-portion{
+justify-content: space-around;    
+width: 100%;
+}
+.chooseYourWeapon h2{
+text-align: center;    
+}
+.chooseYourWeapon{
+display: flex;
+flex-direction: column;
+justify-content: center;    
+}
+.makeASelection {
+flex: 1;
+padding-top: 30px;
+gap: 20px; 
+justify-content: center;   
+}
+.rockInput,
+.paperInput,
+.scissorsInput {
+width: 100px;
+height: 50px;    
+}
+.scoreBoard {
+width: 500px;    
 }
