@@ -1,0 +1,9 @@
+*{
+box-sizing: border-box;    
+}
+
+.play-field {
+border-bottom: thin solid black;
+display: flex;
+justify-content: space-between;    
+}
