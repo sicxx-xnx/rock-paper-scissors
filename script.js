@@ -3,15 +3,30 @@ let humanChoice ;
 let humanScore = 0
 let computerScore = 0   
 let computerChoice ;
-
-
+const playField = document.querySelector(".play-field")
+const playerChoseRock = document.querySelector(".player-chose-rock")
+const playerChosePaper = document.querySelector(".player-chose-paper")
+const playerChoseScissors = document.querySelector(".player-chose-scissors")
+let pcChoseRock = document.querySelector(".pc-chose-rock")
+const pcChosePaper = document.querySelector(".pc-chose-paper")
+const pcChoseScissors = document.querySelector(".pc-chose-scissors")
 function getComputerChoice() {
 let computerChoiceLogic = Math.random()
-if (computerChoiceLogic <= 0.33 ) {
-return computerPlayerSelection = "rock"    
+if (computerChoiceLogic <= 0.33 ) {    
+computerPlayerSelection = "rock" 
+    pcChoseRock.style.display = "block"
+    pcChosePaper.style.display = "none"
+    pcChoseScissors.style.display = "none"
+  return computerPlayerSelection = "rock" 
 } else if (computerChoiceLogic > 0.33 && computerChoiceLogic <= 0.66) {
+    pcChoseRock.style.display = "none"
+    pcChosePaper.style.display = "block"
+    pcChoseScissors.style.display = "none"  
   return computerPlayerSelection = "paper"  
 } else if (computerChoiceLogic > 0.66) {
+    pcChoseRock.style.display = "none"
+    pcChosePaper.style.display = "none"
+    pcChoseScissors.style.display = "block "
   return computerPlayerSelection = "scissors"  
 } else { computerPlayerSelection = "Something went wrong try again"    
 } {    
