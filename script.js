@@ -15,7 +15,16 @@ const rockInput = document.querySelector("#rockInput")
 const paperInput = document.querySelector(".paperInput")
 const scissorsInput = document.querySelector(".scissorsInput")
 const scoreBoard = document.querySelector(".scoreBoard")
+const playerScore = document.querySelector(".playerScoretxt")
+const pcScore = document.querySelector(".computerScoretxt")
+
+
+
+
+
 playerchoice.addEventListener("click", getHumanChoice)
+
+
 function getComputerChoice() {
 let computerChoiceLogic = Math.random()
 if (computerChoiceLogic <= 0.33 ) {    
@@ -39,11 +48,15 @@ computerPlayerSelection = "rock"
 } {    
 }  
 }
+
+
+
 function getHumanChoice(event) {
 target = event.target
 switch (target.id) {
     case "rockInput":
-    humanChoice = "rock"    
+    humanChoice = "rock" 
+    playerChoseRock.style.display = "block"   
         break;
     case "paperInput":
     humanChoice = "paper"    
@@ -65,9 +78,10 @@ if (humanScore === 5) {
  if (computerScore === 5) {
  alert("You lose")
  humanScore = 0
- computerScore = 0     
+ computerScore = 0 
 }
-
+ playerScore.textContent = `${humanScore}`
+ pcScore.textContent = `${computerScore}`
 function playRound(humanChoice,computerChoice) {
 
 if (humanChoice === "rock" && computerChoice === "rock") {

@@ -41,6 +41,7 @@ height: 500px;
 .bottom-portion{
 justify-content: space-around;    
 width: 100%;
+margin-right: 100%;
 }
 .chooseYourWeapon h2{
 text-align: center;    
@@ -64,4 +65,11 @@ height: 50px;
 }
 .scoreBoard {
 width: 500px;    
+}
+.playerVsPcContainer{
+ display: flex;
+ height: 300px;   
+ width: fit-content;
+ justify-content: center;
+ gap: 2em;
 }
