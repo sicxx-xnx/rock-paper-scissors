@@ -14,7 +14,7 @@ const playerchoice = document.querySelector(".chooseYourWeapon")
 const rockInput = document.querySelector("#rockInput")
 const paperInput = document.querySelector(".paperInput")
 const scissorsInput = document.querySelector(".scissorsInput")
-
+const scoreBoard = document.querySelector(".scoreBoard")
 playerchoice.addEventListener("click", getHumanChoice)
 function getComputerChoice() {
 let computerChoiceLogic = Math.random()
@@ -57,17 +57,19 @@ switch (target.id) {
 }
 getComputerChoice()
 playRound(humanChoice,computerPlayerSelection)
-
-    // humanChoice = prompt("choose rock, paper, or scissors!")    
-    // return humanChoice
+if (humanScore === 5) {
+ alert("You Win")
+ humanScore = 0
+ computerScore = 0
+}
+ if (computerScore === 5) {
+ alert("You lose")
+ humanScore = 0
+ computerScore = 0     
 }
 
 function playRound(humanChoice,computerChoice) {
-// humanChoice = getHumanChoice()  
-// computerChoice = getComputerChoice()
-// humanChoice = humanChoice.toLowerCase()
-// console.log("player chose : " + humanChoice)
-// console.log("computer chose : " + computerChoice) 
+
 if (humanChoice === "rock" && computerChoice === "rock") {
     console.log("its a tie!")
     console.log("player score: " + humanScore)
@@ -126,27 +128,28 @@ if (humanChoice === "rock" && computerChoice === "rock") {
 }
 
 
-// function playgame() {
-//  playRound()
-//  playRound()
-//  playRound()
-//  playRound()
-//  playRound()  
 
-//  if (humanScore > computerScore) {
-//     alert("you won the game!")
-//  } else if (humanScore < computerScore) {
-//     alert("you lose this one, Try again")
-//  } else {
-//     alert("its a tie")
-//  } {
+}
+
+
+function playgame() {
+ playRound()
+ playRound()
+ playRound()
+ playRound()
+ playRound()  
+
+ if (humanScore > computerScore) {
+    alert("you won the game!")
+ } else if (humanScore < computerScore) {
+    alert("you lose this one, Try again")
+ } else {
+    alert("its a tie")
+ } {
     
-//  }
-// }
+ }
+}
 function startGame() {
 playgame()
 humanScore = 0
-computerScore = 0    
-}
-
-// startGame()
+computerScore = 0 }   
