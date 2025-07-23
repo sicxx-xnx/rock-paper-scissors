@@ -10,6 +10,12 @@ const playerChoseScissors = document.querySelector(".player-chose-scissors")
 let pcChoseRock = document.querySelector(".pc-chose-rock")
 const pcChosePaper = document.querySelector(".pc-chose-paper")
 const pcChoseScissors = document.querySelector(".pc-chose-scissors")
+const playerchoice = document.querySelector(".chooseYourWeapon")
+const rockInput = document.querySelector("#rockInput")
+const paperInput = document.querySelector(".paperInput")
+const scissorsInput = document.querySelector(".scissorsInput")
+
+playerchoice.addEventListener("click", getHumanChoice)
 function getComputerChoice() {
 let computerChoiceLogic = Math.random()
 if (computerChoiceLogic <= 0.33 ) {    
@@ -33,17 +39,35 @@ computerPlayerSelection = "rock"
 } {    
 }  
 }
-function getHumanChoice() {
-humanChoice = prompt("choose rock, paper, or scissors!")    
-    return humanChoice
+function getHumanChoice(event) {
+target = event.target
+switch (target.id) {
+    case "rockInput":
+    humanChoice = "rock"    
+        break;
+    case "paperInput":
+    humanChoice = "paper"    
+        break;    
+    case "scissorsInput":
+    humanChoice = "scissors"    
+        break;
+    default:
+     humanChoice = "unknown"   
+        break;
+}
+getComputerChoice()
+playRound(humanChoice,computerPlayerSelection)
+
+    // humanChoice = prompt("choose rock, paper, or scissors!")    
+    // return humanChoice
 }
 
 function playRound(humanChoice,computerChoice) {
-humanChoice = getHumanChoice()  
-computerChoice = getComputerChoice()
-humanChoice = humanChoice.toLowerCase()
-console.log("player chose : " + humanChoice)
-console.log("computer chose : " + computerChoice) 
+// humanChoice = getHumanChoice()  
+// computerChoice = getComputerChoice()
+// humanChoice = humanChoice.toLowerCase()
+// console.log("player chose : " + humanChoice)
+// console.log("computer chose : " + computerChoice) 
 if (humanChoice === "rock" && computerChoice === "rock") {
     console.log("its a tie!")
     console.log("player score: " + humanScore)
@@ -102,27 +126,27 @@ if (humanChoice === "rock" && computerChoice === "rock") {
 }
 
 
-function playgame() {
- playRound()
- playRound()
- playRound()
- playRound()
- playRound()  
+// function playgame() {
+//  playRound()
+//  playRound()
+//  playRound()
+//  playRound()
+//  playRound()  
 
- if (humanScore > computerScore) {
-    alert("you won the game!")
- } else if (humanScore < computerScore) {
-    alert("you lose this one, Try again")
- } else {
-    alert("its a tie")
- } {
+//  if (humanScore > computerScore) {
+//     alert("you won the game!")
+//  } else if (humanScore < computerScore) {
+//     alert("you lose this one, Try again")
+//  } else {
+//     alert("its a tie")
+//  } {
     
- }
-}
+//  }
+// }
 function startGame() {
 playgame()
 humanScore = 0
 computerScore = 0    
 }
 
-startGame()
+// startGame()
