@@ -68,7 +68,7 @@ width: 500px;
 }
 .playerVsPcContainer{
  display: flex;
- height: 300px;   
+ height: 150px;   
  width: fit-content;
  justify-content: center;
  gap: 2em;

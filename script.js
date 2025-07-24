@@ -17,6 +17,7 @@ const scissorsInput = document.querySelector(".scissorsInput")
 const scoreBoard = document.querySelector(".scoreBoard")
 const playerScore = document.querySelector(".playerScoretxt")
 const pcScore = document.querySelector(".computerScoretxt")
+const gamelog = document.querySelector(".gamelog")
 
 
 
@@ -56,13 +57,21 @@ target = event.target
 switch (target.id) {
     case "rockInput":
     humanChoice = "rock" 
-    playerChoseRock.style.display = "block"   
+    playerChoseRock.style.display = "block"
+    playerChosePaper.style.display = "none"
+    playerChoseScissors.style.display = "none"   
         break;
     case "paperInput":
-    humanChoice = "paper"    
+    humanChoice = "paper"
+        playerChoseRock.style.display = "none"
+    playerChosePaper.style.display = "block"
+    playerChoseScissors.style.display = "none"       
         break;    
     case "scissorsInput":
-    humanChoice = "scissors"    
+    humanChoice = "scissors" 
+        playerChoseRock.style.display = "none"
+    playerChosePaper.style.display = "none"
+    playerChoseScissors.style.display = "block"      
         break;
     default:
      humanChoice = "unknown"   
@@ -70,6 +79,7 @@ switch (target.id) {
 }
 getComputerChoice()
 playRound(humanChoice,computerPlayerSelection)
+
 if (humanScore === 5) {
  alert("You Win")
  humanScore = 0
@@ -82,67 +92,24 @@ if (humanScore === 5) {
 }
  playerScore.textContent = `${humanScore}`
  pcScore.textContent = `${computerScore}`
-function playRound(humanChoice,computerChoice) {
 
-if (humanChoice === "rock" && computerChoice === "rock") {
-    console.log("its a tie!")
-    console.log("player score: " + humanScore)
-    console.log("compputer score: " + computerScore)    
-} else if (humanChoice === "rock" && computerChoice === "paper") {
-     console.log("You Lose!")
-       console.log("player score: " + humanScore)
-    console.log("compputer score: " + ++computerScore)  
-} else if (humanChoice === "rock" && computerChoice === "scissors") {
-     console.log('You win!')
-       console.log("player score: " + ++humanScore)
-    console.log("compputer score: " + computerScore)  
-} else if (humanChoice === "paper" && computerChoice === "paper" ) {
-     console.log("its a tie") 
-       console.log("player score: " + humanScore)
-    console.log("compputer score: " + computerScore)  
-} else if (humanChoice === "paper" && computerChoice === "rock") {
-    console.log("you win!")
-    console.log("player score: " + ++humanScore)
-    console.log("compputer score: " + computerScore)  
-} else if (humanChoice === "paper" && computerChoice === "scissors") {
-    console.log("you lose!")
-    console.log("player score: " + humanScore)
-    console.log("compputer score: " + ++computerScore)  
-} else if (humanChoice === "scissors" && computerChoice === "scissors") {
-    console.log("its a tie") 
-    console.log("player score: " + humanScore)
-    console.log("compputer score: " + computerScore)   
-} else if (humanChoice === "scissors" && computerChoice === "paper") {
-    console.log("you win!")
-    console.log("player score: " + ++humanScore)
-    console.log("compputer score: " + computerScore) 
-} else if (humanChoice === "scissors" && computerChoice === "rock") {
-    console.log("You lose!")
-    console.log("player score: " + humanScore)
-    console.log("compputer score: " + ++computerScore) 
-} else {
-    
-} {
-    
-} {
-    
-} {
-    
-} {
-    
-}{
-    
-} {
-    
-} {
-    
-} {
-    
+
+ 
+function playRound(humanChoice,computerChoice) {
+if (humanChoice === computerChoice) {
+    gamelog.textContent = "its a tie!"   
+}  else if (humanChoice === "rock" && computerChoice === "scissors") {
+gamelog.textContent = `You Win ${humanChoice} beats ${computerChoice}!`
+++humanScore
+}  else if (humanChoice === "paper" && computerChoice === "rock") {
+gamelog.textContent = `You Win ${humanChoice} beats ${computerChoice}!`
+++humanScore
+}   else if (humanChoice === "scissors" && computerChoice === "paper") {
+gamelog.textContent = `You Win ${humanChoice} beats ${computerChoice}!`
+++humanScore
+}  else {++computerScore ; gamelog.textContent = `You Lose! ${computerChoice} bests ${humanChoice}`   
 } 
 }
-
-
-
 }
 
 
